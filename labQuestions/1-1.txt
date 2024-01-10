@@ -1,0 +1,8 @@
+When a new block of data is read into the cache, 
+what determines which cache location the block will 
+occupy and how is this determination made?
+
+when a new block of data is read into the cache, the mapping
+function determines the cache location in which the new block
+of data is stored. The mapping function also determines whether 
+the data is stored into temporal or spatial locality.
