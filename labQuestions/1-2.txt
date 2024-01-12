@@ -1,0 +1,9 @@
+Which type of registers are used by system programs to minimize main memory references?
+How is register use optimized?
+
+Registers located on the processor are used to minimize main memory references.
+Because of its location being directly on the processor, read and write times are minimized
+substantially as opposed to fetching the data from the main memory RAM and/or ROM.
+Register use is optimized through algorithms that eliminate the need for 
+register-to-register moves. Additionally, minimizing array access can be utilized through
+creating variables to reduce cache memory.
