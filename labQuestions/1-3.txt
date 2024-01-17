@@ -1,0 +1,8 @@
+Describe how a process, executing an application, is divided into 
+threads that can run concurrently.
+
+A process may be divided into multiple threads that can run concurrently.
+On a single core cpu, only one thread can run at a time. The operating system
+will switch between threads to give the illusion of concurrency. 
+On a multi-core cpu, multiple threads can run at the same time with one 
+process running per core at any given instant.
