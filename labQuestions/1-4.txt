@@ -1,0 +1,12 @@
+Explain the mechanism that allows programs to address memory from a 
+logical point of view, without regard to the amount of main memory 
+physically available.
+
+Without regard to the amount of main memory physically available, this may
+be done by using virtual memory. The program is given a large, contiguous 
+address space, and the operating system maps the program's address 
+space onto the physical memory of the computer. The program is not aware 
+of the mapping, and it does not need to be aware of the amount of 
+physical memory available. The operating system can also map the 
+program's address space onto disk storage, so that the program can use 
+more memory than is physically available.
