@@ -1,0 +1,9 @@
+Describe the sequence of actions immediately after the OS creates a process
+at the explicit request of another process.
+
+This process is known as process spawning. The OS creates a new process
+control block (PCB) for the new process and allocates a unique process
+identifier (PID) to the new process. The OS also allocates space for the 
+process's code, data, and stack. This initializes all of the process's data
+structures, including the PCB. The OS then sets the appropriate linkages to 
+include the new process in the appropriate queues.
