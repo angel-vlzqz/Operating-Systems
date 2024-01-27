@@ -1,4 +1,4 @@
-Once you have downloaded of cloned this repo to your machine using git, run
+Once you have downloaded or cloned this repo to your machine using git, run
 this command in your CLI
 ```
 g++ -pthread -o run prodCons.cpp
