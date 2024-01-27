@@ -1,0 +1,6 @@
+When a process is not running, what happens to the processor status information?
+
+When a process is not running, its data is saved in the process control block.
+The processor is marked as idle in the PCB unless a running process or thread
+is using it. Although it does not use processor time, it still takes up memory
+while it exists.
