@@ -1,0 +1,9 @@
+Describe which two fundamental forms of concurrent activity do most operating
+systems contain?
+
+The two fundamental forms of concurrent activity that most operating systems
+contain are processes and threads. A process is a program in execution. A
+thread is a sequence of execution within a process. A process can have multiple
+threads. A thread is a lightweight process that can be scheduled for execution.
+A process is an execution environment that has its own address space, global
+variables, program code, and data.

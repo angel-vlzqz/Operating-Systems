@@ -48,7 +48,7 @@ void* producer(void* arg) {
     while(1) {
         i = produce();
         put(i);
-        sleep(1);
+        //sleep(1);
     }
 }
 
@@ -59,7 +59,7 @@ void* consumer(void* arg) {
         if (i != -1) {
             consume(i);
         }
-        sleep(1);
+        //sleep(1);
     }
 }
 
