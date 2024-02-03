@@ -1,0 +1,10 @@
+How can the activities of various threads be managed so they do not interfere
+with each other of corrupt data structures?
+
+Activities of various threads can by managed using synchronization. 
+Synchronization is the capability to control the access of multiple threads 
+to shared resources. It is used to prevent thread interference and memory 
+consistency errors. It is also used to control access to shared 
+resources. When a thread is executing a synchronized method for an object, 
+all other threads that invoke synchronized methods for the same object block 
+(suspend execution) until the first thread is done with the object.
