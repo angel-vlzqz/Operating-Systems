@@ -1,0 +1,10 @@
+Describe the only three operations that can be performed by a semaphore.
+
+1. Wait: If the semaphore value is greater than 0, it is decremented by 1 and
+   the calling process continues. If the semaphore value is 0, the calling 
+   process is blocked until the semaphore value is greater than 0.
+
+2. Signal: The semaphore value is incremented by 1. If there are processes 
+   blocked on the semaphore, one of them is unblocked.
+
+3. Initialization: The semaphore value is set to a non-negative integer.
