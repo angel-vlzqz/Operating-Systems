@@ -1,0 +1,11 @@
+Explain how a monitor supports synchronization.
+
+Monitors provide a mechanism for threads to temporarily give up exclusive 
+access in order to wait for some condition to be met. This is done by calling 
+the wait() method of the monitor. The thread gives up the monitor and goes to 
+sleep. Later, when the condition has been met, another thread can wake up the 
+sleeping thread by calling the notify() or notifyAll() method of the monitor. 
+The sleeping thread then wakes up and reacquires the monitor. A monitor 
+consists of a mutex and a condition variable. The mutex is used to ensure
+mutual exclusion. The condition variable is used to wait for a condition to
+be met.
