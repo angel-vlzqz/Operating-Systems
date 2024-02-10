@@ -23,7 +23,7 @@ flags such as `ls -l` to print meta data related to every file in the system.
 directory as long as the path entered is correct.
 4. `touch file` will create a new file in current working directory
 5. `rm file` will remove any file given into the input. Using `rm -rf file`
-will force remove the file given. and `rm -rf /` will delete all directories
+will force remove the file given. And `rm -rf /` will delete all directories
 on your system. What ever you do, DO NOT RUN `rm -rf /` because you will have
 a very bad day
 
