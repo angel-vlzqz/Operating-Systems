@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <sys/wait.h>
 
-usint namespace std;
+using namespace std;
 
 void executeCommand(const vector<string>& args) {
   pid_t pid = fork();
@@ -43,7 +43,7 @@ int main() {
     getline(cin, input);
 
     // Exit if the user enters 'exit'
-    if (input == "exit") {
+    if (input == "quit") {
       break;
     }
 
