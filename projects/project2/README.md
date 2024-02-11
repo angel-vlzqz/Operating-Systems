@@ -27,4 +27,9 @@ will force remove the file given. And `rm -rf /` will delete all directories
 on your system. What ever you do, DO NOT RUN `rm -rf /` because you will have
 a very bad day
 
+To run the .sh script, run:
+```
+bash file.sh
+```
+
 To quit the program, simply enter `quit`
