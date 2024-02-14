@@ -1,16 +1,12 @@
-This project is a `simple` UNIX command line interpretter written in C++. Some
-parts of the code utilize features from version 11 of C++. Thus, you may need
-to tell your compiler to compile the file in version 11 of C++. To do so, run
-this command in your CLI
+This project is a `simple` UNIX command line interpretter written in C. To 
+compile this program in your system, run this command in your CLI
 ```
-g++ -o bash bash.cpp -std=c++11
+gcc -o run bash.c 
 ```
-We use `-std=c++11` to tell the compiler to compile the cpp file in version 11
-of C++.
 
 To run the bash interpretter, run the following command into your CLI
 ```
-./bash
+./run
 ```
 
 Now, you may interact with the shell as if it were a part of your system.
