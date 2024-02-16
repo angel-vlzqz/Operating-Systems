@@ -1,0 +1,6 @@
+Give an example of an executable entity within a process. Explain its
+significance.
+
+An executable entity is a process that is currently running. It is
+significant because it is the entity that is currently being executed
+by the CPU.
