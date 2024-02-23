@@ -1,0 +1,8 @@
+Describe what might occur as a result of a programming error when a process 
+attempts to store data beyond the limits of a fixed-sezed buffer and 
+consequently overwrites adjacent memory locations. 
+
+1. The process may crash.
+2. The process may corrupt the data of another process.
+3. The process may corrupt the operating system.
+4. The process may corrupt the data of the process itself.
