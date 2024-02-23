@@ -1,0 +1,7 @@
+Describe the basic tools of memory management
+
+Some of the basic tools of memory management are Memory allocation, 
+Memory deallocation, Memory management, Memory protection, Memory sharing,
+Memory swapping, Memory segmentation, Memory paging, Memory mapping,
+Memory protection, Memory virtualization, Memory fragmentation, and Memory 
+compaction. These tools are used to manage the memory of a computer system.
