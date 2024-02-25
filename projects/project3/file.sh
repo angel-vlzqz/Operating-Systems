@@ -1,7 +1,7 @@
-echo "# this is a comment"
+# this is a comment
 
 echo "Hello, world!"
 
-echo "ls"
+ls -l
 
 exit 0
