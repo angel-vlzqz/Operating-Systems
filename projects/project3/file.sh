@@ -2,6 +2,6 @@ echo "# this is a comment"
 
 echo "Hello, world!"
 
-echo "ls -l"
+echo "ls"
 
 exit 0
