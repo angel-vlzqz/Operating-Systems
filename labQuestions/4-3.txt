@@ -1,0 +1,6 @@
+When is a page is brought into main memory? Provide a detailed scenario and
+refer to the location of the page as well.
+
+A page is brought into main memory when it is brought in from the disk or 
+storage. The bage is brought into main memory when the page is needed by the
+CPU. It's location in main memory is specified by the page table.
