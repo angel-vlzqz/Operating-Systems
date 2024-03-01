@@ -1,0 +1,11 @@
+Describe the three level page structure in linux.
+
+1. The top level page table is a two-level page table. It is indexed by the
+top 10 bits of the virtual address. The top level page table contains
+1024 entries, each of which points to a second level page table.
+
+2. The second level page table is indexed by the next 10 bits of the virtual
+address. It contains 1024 entries, each of which points to a page frame.
+
+3. The page frame is indexed by the last 12 bits of the virtual address. 
+It contains 4096 bytes.
