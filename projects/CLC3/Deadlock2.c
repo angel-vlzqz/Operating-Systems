@@ -1,4 +1,3 @@
-// Created by: Nathan Dilla, Angel Velazquez
 // This program demonstrates a deadlock scenario and how to avoid it using
 // the trylock function.
 #include <pthread.h>
