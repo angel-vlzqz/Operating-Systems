@@ -1,0 +1,13 @@
+How does a scheduler estimate the processing times for each process, and how
+is starvation of longer processes handled?
+
+A scheduler estimates the processing times for each process by using the
+information it has about the process. This information includes the priority of
+the process, the amount of time the process has been running, and the amount of
+time the process has been waiting. The scheduler uses this information to
+determine how long the process is likely to take to complete, and then schedules
+the process accordingly. Starvation of longer processes is handled by using
+priority levels. The scheduler assigns a priority level to each process, and
+then schedules the processes based on their priority levels. This ensures that
+longer processes are not starved, as they will be given a higher priority and
+scheduled accordingly.
