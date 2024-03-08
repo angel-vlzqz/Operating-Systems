@@ -1,0 +1,7 @@
+How do priority levels in UNIX aid the scheduling mechanism?
+
+Priority levels in UNIX aid the scheduling mechanism by 
+allowing the system to assign a priority level to each process.
+The priority level is used to determine the order in which
+processes are scheduled to run. The higher the priority level,
+the sooner the process will be scheduled to run.
