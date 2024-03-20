@@ -1,0 +1,6 @@
+Can an operating system fail in such a way that it preserves a signigicant part
+of capabilities and data? explain.
+
+Yes, it can. For example, if the operating system fails to boot, the data on 
+the hard drive is still preserved. If the operating system fails to load a
+specific driver, the data is still preserved.
