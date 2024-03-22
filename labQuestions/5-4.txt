@@ -1,0 +1,7 @@
+When and why would the system force a higher priority task to wait for a lower
+priority task?
+
+The system would force a higher priority task to wait for a lower priority task
+when the lower priority task is in the critical section. This is because the
+lower priority task is in the critical section and the higher priority task
+cannot interrupt it.
