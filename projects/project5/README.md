@@ -17,4 +17,4 @@ To run the shell in batch mode, run
 `start` to start all processes\
 `procs` to display all the processes and their states\
 `procs -a` or `procs -a -si` to desplay all the information about the processes\
-`modpri (id) (newid)` to modify a process priority\
+`modpri (id) (newid)` to modify a process priority
