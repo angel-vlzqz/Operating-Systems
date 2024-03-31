@@ -1,0 +1,15 @@
+Describe two different types of redundant array of independent disks (RAID)
+configurations, stating when one is more likely to use one over the other.
+
+RAID 0: Striping
+- Data is split into blocks and each block is written to a separate disk drive.
+- No redundancy.
+- High performance.
+- Used when performance is more important than data protection.
+
+RAID 1: Mirroring
+- Data is written to two or more disks.
+- Redundancy.
+- High data protection.
+- Used when data protection is more important than performance.
+

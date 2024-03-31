@@ -1,0 +1,10 @@
+How are fine descriptors and symbol tables used to refer to tiles?
+
+Fine descriptors are used to refer to tiles in the tile cache. The fine 
+descriptor is a unique identifier for a tile. It is composed of the tile's 
+level, row, and column. The fine descriptor is used to refer to a tile in 
+the tile cache. Additionally, the symbol table is used to refer to tiles in 
+the tile cache. The symbol table is a data structure that maps fine 
+descriptors to tile data. It is also used to look up the tile data associated 
+with a given fine descriptor.
+
