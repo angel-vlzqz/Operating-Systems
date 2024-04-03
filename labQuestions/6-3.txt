@@ -1,0 +1,11 @@
+How is general purpose record I/O capability provided and how is basic data
+about files maintained?
+
+General purpose record I/O capability is provided by the use of the file
+system. The file system is a collection of files and directories that are
+organized in a hierarchical structure. It provides a way to store and retrieve
+data on a storage device. The file system maintains basic data about files such
+as the file name, size, type, and location on the storage device. It also
+provides mechanisms for creating, opening, reading, writing, and closing files.
+
+
