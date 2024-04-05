@@ -1,0 +1,6 @@
+describe three common methods for file allocation.
+
+One method is contiguous allocation, where each file occupies a set of 
+contiguous blocks on the disk. Another method is linked allocation, where each 
+file is a linked list of blocks. A third method is indexed allocation, where 
+each file has an index block that contains pointers to the blocks of the file.
