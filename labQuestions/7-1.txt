@@ -1,0 +1,11 @@
+How is data exchange between the client and the underlying resource meditated
+in an operating system? Explain.
+
+Data exchange between the client and the underlying resource is mediated by the
+operating system through the use of system calls. System calls are used to
+request services from the operating system. The operating system then performs
+the requested service and returns the result to the client. This allows the
+client to interact with the underlying resource without having to know the
+details of how the resource is managed by the operating system.
+
+
