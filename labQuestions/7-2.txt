@@ -1,0 +1,9 @@
+What type of abstract representations are used for interrupts and counters?
+
+Interrupts and counters are represented as abstract objects. The interrupt 
+object is a special type of object that is used to represent the interrupt. 
+It is a special type of object that is used to represent the counter, and these
+objects are used to represent the state of the interrupt or counter. The 
+interrupt object is used to represent the state of the interrupt, and the 
+counter object is used to represent the state of the counter.
+
