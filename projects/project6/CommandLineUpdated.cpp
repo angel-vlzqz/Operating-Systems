@@ -9,9 +9,8 @@
 #include <queue>
 #include <pthread.h>
 #include <random> // For std::random_device and std::mt19937
+#include <sys/stat.h> // For stat() function and chmod
 #include "FileSystem.h" // Include the FileSystem header file
-
-using namespace std;
 
 FileSystem fs; // Create an instance of the FileSystem class
 
@@ -58,6 +57,14 @@ struct FindProcessById {
     }
 };
 
+void changeFilePermissions(const std::string& filename, mode_t mode) {
+    if (chmod(filename.c_str(), mode) == -1) {
+        std::cerr << "Failed to change file permissions for: " << filename << std::endl;
+        perror("Error");  // This will print the error message related to errno
+    } else {
+        std::cout << "Permissions changed successfully for: " << filename << std::endl;
+    }
+}
 
 void displayProcesses(bool detailed, bool sortById = false) {
     if (sortById) {
@@ -147,6 +154,44 @@ void trim(std::string& s) {
     }
 }
 
+void editFile(const std::string& filename) {
+    std::ifstream file(filename);
+    std::string line;
+    std::stringstream buffer;
+
+    if (file) {
+        while (getline(file, line)) {
+            buffer << line << "\n";
+        }
+        file.close();
+    } else {
+        std::cout << "Failed to open file." << std::endl;
+        return;
+    }
+
+    std::cout << "Original File Content:" << std::endl;
+    std::cout << buffer.str();
+
+    std::string inputText;
+    std::cout << "\nEnter text to append or type ':save' to finish:" << std::endl;
+    while (getline(std::cin, inputText)) {
+        if (inputText == ":save") {
+            break;
+        }
+        buffer << inputText << "\n";
+    }
+
+    std::ofstream outFile(filename);
+    if (outFile) {
+        outFile << buffer.str();
+        outFile.close();
+        std::cout << "File saved successfully." << std::endl;
+    } else {
+        std::cout << "Error saving file." << std::endl;
+    }
+}
+
+
 void* executeCommand(void* arg) {
     Process* process = (Process*)arg;
     process->state = RUNNING;
@@ -224,6 +269,23 @@ void displayHelp() {
     cout << "modpri <id> <priority> - Modify priority of a process" << endl;
     cout << "help - Display available commands" << endl;
     cout << "exit - Exit the program" << endl;
+    cout << "mkdir <path> - Create a new directory" << endl;
+    cout << "rm <path> - Remove a file or directory" << endl;
+    cout << "rename <old path> <new name> - Rename a file or directory" << endl;
+    cout << "ls <path> - List files and directories" << endl;
+    cout << "touch <path> [--size] - Create a new file with optional random size" << endl;
+    cout << "tree [path] - Display directory tree starting from the specified path" << endl;
+    cout << "move <oldPath> <newPath> - Move a file or directory to a new location" << endl;
+    cout << "dupfile <sourcePath> <targetPath> - Duplicate a file" << endl;
+    cout << "dupdir <sourceDirPath> <targetDirPath> - Duplicate a directory" << endl;
+    cout << "search <fileName> [startPath] - Search for a file starting from a specific path" << endl;
+    cout << "info <path> - Display basic information about a file or directory" << endl;
+    cout << "info -d <path> - Display detailed information about a file or directory" << endl;
+    cout << "chmod <filename> <permissions> - Change file permissions" << endl;
+    cout << "- 644 permission to read and write for owner, read for group and others" << endl;
+    cout << "- 755 permission to read, write and execute for owner, read and execute for group and others" << endl;
+    cout << "- 777 permission to read, write and execute for all" << endl;
+
 }
 
 void doCommand(string input) {
@@ -267,6 +329,19 @@ void doCommand(string input) {
     } else if (input.substr(0,6) == "mkdir ") {
         string path = input.substr(6);
         bool newFile = fs.createFile(path, FileType_DIRECTORY, "rw-");
+    } else if (input.substr(0, 6) == "chmod ") {
+    string rest = input.substr(6);
+    size_t spacePos = rest.find(' ');
+    if (spacePos == string::npos) {
+        cout << "Invalid command format. Usage: chmod [filename] [permissions]" << endl;
+    } else {
+        string filename = rest.substr(0, spacePos);
+        string permStr = rest.substr(spacePos + 1);
+        trim(filename);
+        trim(permStr);
+        mode_t mode = static_cast<mode_t>(strtol(permStr.c_str(), nullptr, 8));  // Convert string to octal number
+        changeFilePermissions(filename, mode);
+    }
     } else if (input.substr(0,3) == "rm ") {
         string path = input.substr(3);
         fs.deleteFile(path);
@@ -318,6 +393,10 @@ void doCommand(string input) {
         } else {
             fs.displayDirectoryTree(path);
         }
+    } else if (input.substr(0, 5) == "edit ") {
+    string filename = input.substr(5);  // Extract filename from command
+    trim(filename);  // Use existing trim function to clean up filename
+    editFile(filename);
     } else if (input.substr(0, 5) == "move ") {
         string restOfInput = input.substr(5);
         size_t spaceIndex = restOfInput.find(' ');
@@ -452,18 +531,5 @@ int main(int argc, char* argv[]) {
         delete processQueue.front(); // Clean up
         processQueue.pop();
     }
-    else if (input.substr(0, 5) == "edit ") {
-    string restOfInput = input.substr(5);
-    size_t spaceIndex = restOfInput.find(' ');
-    if (spaceIndex == string::npos) {
-        cout << "Invalid edit command. Correct format: edit [path] [newPermissions]" << endl;
-    } else {
-        string path = restOfInput.substr(0, spaceIndex);
-        string newPermissions = restOfInput.substr(spaceIndex + 1);
-        if (!fs.editFileDetails(path, newPermissions)) {
-            cout << "Failed to edit details for: '" << path << "'." << endl;
-        }
-    }
-}
-return 0;
+    return 0;
 }

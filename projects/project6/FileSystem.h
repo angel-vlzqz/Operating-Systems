@@ -337,25 +337,4 @@ public:
         }
     }
 
-bool editFileDetails(const std::string& path, const std::string& newPermissions);
 };
-
-// int main() {
-//     FileSystem fs;
-//     fs.createFile("/docs", FileType_DIRECTORY, "rwx");
-//     fs.createFile("/docs/example.txt", FileType_FILE, "rw-", 1024);
-//     // fs.listFiles("/docs");
-
-//     return 0;
-// }
-
-bool FileSystem::editFileDetails(const string& path, const string& newPermissions) {
-    File* file = findFile(path);
-    if (!file) {
-        cout << "File or directory not found: " << path << endl;
-        return false;
-    }
-    file->permissions = newPermissions;
-    cout << "Permissions updated to: " << newPermissions << endl;
-    return true;
-}
