@@ -1,0 +1,29 @@
+Describe the mechanism for allocating more memory that physically exists on a
+host.
+
+The mechanism for allocating more memory than physically exists on a host is
+called virtual memory. Virtual memory is a memory management technique that
+provides an "idealized abstraction of the storage resources that are actually
+available on a given machine" which "creates the illusion to users of a very
+large (main) memory." This is done by using a combination of hardware and
+operating system software to create a virtual address space that is larger than
+the physical memory available on the system. The operating system manages this
+virtual address space and uses a combination of techniques such as paging and
+swapping to move data between physical memory and disk storage as needed.
+
+When a program requests memory from the operating system, the operating system
+allocates a block of virtual memory to the program. This virtual memory is
+divided into fixed-size blocks called pages. The operating system then maps
+these pages to physical memory or disk storage as needed. If the physical memory
+is full, the operating system can move some pages to disk storage to free up
+space in physical memory. This process is known as paging.
+
+In addition to paging, the operating system can also use a technique called
+swapping to move entire processes or parts of processes between physical memory
+and disk storage. This allows the operating system to free up physical memory
+for other processes when needed.
+
+Overall, the mechanism for allocating more memory than physically exists on a
+host involves using a combination of virtual memory, paging, and swapping
+techniques to manage memory resources efficiently and provide the illusion of a
+large memory space to applications running on the system. 
